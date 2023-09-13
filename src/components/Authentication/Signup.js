@@ -41,7 +41,6 @@ const Signup = () => {
       return;
     }
 
-    console.log({ pics, type: pics.type });
 
     if (
       pics.type === "image/jpeg" ||
@@ -123,14 +122,15 @@ const Signup = () => {
 
         
       toast({
-        title: "Registration successfully",
+        title: "Registration successfull",
         status: "success",
         duration: 5000,
         isClosable: true,
       });
      
       localStorage.setItem('userInfo', JSON.stringify(data));
-      navigate('/chats')
+      navigate('/chats');
+      window.location.reload();
 
     
       } catch (error) {
@@ -208,7 +208,6 @@ const Signup = () => {
           type="file"
           p={1.5}
           onChange={(e) => {
-            console.log(e.target.files[0], "this is the value");
             postImage(e.target.files[0]);
           }}
           accept="image/*"
