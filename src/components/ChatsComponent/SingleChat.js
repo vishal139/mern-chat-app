@@ -63,7 +63,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   }, [selectedChat]);
 
   const fetchMessages = async () => {
-    if (!selectedChat) return;
+    if (!selectedChat || !selectedChat._id) return;
 
     try {
       const config = {

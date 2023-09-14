@@ -113,7 +113,7 @@ const Login = () => {
         onClick={handleLogin}
         isLoading={loading}
       >
-        Login-
+        Login
       </Button>
       <Button
         colorScheme="red"

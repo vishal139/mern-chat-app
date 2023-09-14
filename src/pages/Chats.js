@@ -6,7 +6,10 @@ import Chatbox from "../components/ChatsComponent/Chatbox";
 
 import { Box } from "@chakra-ui/react";
 import chatApi from "../api";
+import { useNavigate } from "react-router-dom";
 const Chat = () => {
+
+  const navigate = useNavigate()
   const { user, setChats } = ChatState();
   const [fetchAgain, setFetchAgain] = useState(false)
 
@@ -29,8 +32,10 @@ const Chat = () => {
     if(user)
     {
       fetchAllChats();
+      window.location.reload();
+      return;
     }
-  }, [user]);
+  },[]);
 
 
   return (
